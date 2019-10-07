@@ -16,16 +16,16 @@ class ArticleController extends Controller
 
     public function create(Request $request)
     {
-        if ($request->isMethod('get'))
-            return view('article.form');
-        else {
-            $article = new Article();
-            $article->name = $request->name;
-            $article->title = $request->title;
-            $article->text = $request->text;
-            $article->save();
-            return redirect('/');
-        }
+        // if ($request->isMethod('get'))
+            return view('article.new');
+        // else {
+        //     $article = new Article();
+        //     $article->name = $request->name;
+        //     $article->title = $request->title;
+        //     $article->text = $request->text;
+        //     $article->save();
+        //     return redirect('/');
+        // }
     }
 
     public function delete($id)

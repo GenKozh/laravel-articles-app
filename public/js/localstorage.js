@@ -7,7 +7,6 @@ function getValues(id) {
       formFields = saved;
     }
     if (formFields[id]) {
-        console.log(formFields);
         document.getElementById('author').value = formFields[id].name;
         document.getElementById('title').value = formFields[id].title;
         document.getElementById('text').value = formFields[id].text;
