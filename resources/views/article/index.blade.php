@@ -20,11 +20,11 @@
                 <th width="60px" style="vertical-align: middle;text-align: center">No</th>
                 <th width="200px" style="vertical-align: middle">Author Name
                 </th>
-                <th style="vertical-align: middle">Title
+                <th style="vertical-align: middle">Title - select to view Details
                 </th>
                 <th style="vertical-align: middle">Article text
                 </th>
-                <th width="130px" style="vertical-align: middle">Action</th>
+                <th width="130px" style="text-align: center; vertical-align: middle">Action</th>
             </tr>
             </thead>
             <tbody>
@@ -42,9 +42,9 @@
                         <form id="frm_{{$article->id}}"
                               action="{{url('/delete/'.$article->id)}}"
                               method="post" style="padding-bottom: 0px;margin-bottom: 0px">
-                            <a class="btn btn-primary btn-sm" title="Edit"
+                            <!-- <a class="btn btn-primary btn-sm" title="Edit"
                                href="{{url('/update/'.$article->id)}}">
-                                Edit</a>
+                                Edit</a> -->
                             <input type="hidden" name="_method" value="delete"/>
                             {{csrf_field()}}
                             <a class="btn btn-danger btn-sm" title="Delete"

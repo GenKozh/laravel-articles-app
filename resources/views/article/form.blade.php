@@ -9,7 +9,7 @@
     </style>
 @endsection
 @section('content')
-    <div class="container">
+    <div class="container" >
         <div class="col-md-8 offset-md-2">
             <h1>{{isset($article)?'Edit page':'New Article'}} </h1>
             <hr/>
@@ -18,23 +18,23 @@
             @else
                 {!! Form::open() !!}
             @endif
-            <div class="form-group row required">
+            <div class="form-group row required" >
                 {!! Form::label("name","Author:",["class"=>"col-form-label col-md-3 col-lg-2"]) !!}
-                <div class="col-md-8">
-                    {!! Form::text("name",null,["class"=>"form-control".($errors->has('name')?" is-invalid":""),"autofocus",'placeholder'=>'Name']) !!}
+                <div class="col-md-8" oninput="setValues('{{$article->id}}')">
+                    {!! Form::text("name",null,["class"=>"form-control".($errors->has('name')?" is-invalid":""),'placeholder'=>'Name', 'id'=>'author']) !!}
                     {!! $errors->first('name','<span class="invalid-feedback">:message</span>') !!}
                 </div>
             </div>
             <div class="form-group row required">
                 {!! Form::label("title","Title",["class"=>"col-form-label col-md-3 col-lg-2"]) !!}
-                <div class="col-md-8">
-                    {!! Form::text("title",null,["class"=>"form-control".($errors->has('title')?" is-invalid":""),"autofocus",'placeholder'=>'Title']) !!}
+                <div class="col-md-8" onchange="setValues('{{$article->id}}')">
+                    {!! Form::text("title",null,["class"=>"form-control".($errors->has('title')?" is-invalid":""),'placeholder'=>'Title', 'id'=>'title']) !!}
                 </div>
             </div>
             <div class="form-group row required">
                 {!! Form::label("text","Text",["class"=>"col-form-label col-md-3 col-lg-2"]) !!}
-                <div class="col-md-8">
-                    {!! Form::textarea("text", null, ["class"=>"form-control".($errors->has('text')?" is-invalid":""), 'rows' => 12, 'cols' => 54, 'style' => 'resize:none', 'placeholder'=>'Article text']) !!}
+                <div class="col-md-8" onchange="setValues('{{$article->id}}')">
+                    {!! Form::textarea("text", null, ["class"=>"form-control".($errors->has('text')?" is-invalid":""), 'rows' => 12, 'cols' => 54, 'style' => 'resize:none', 'placeholder'=>'Article text', 'id'=>'text']) !!}
                     {!! $errors->first('text','<span class="invalid-feedback">:message</span>') !!}
                 </div>
             </div>
@@ -57,5 +57,8 @@
             </div>
             {!! Form::close() !!}
         </div>
+        <script>
+            getValues('{{$article->id}}');
+        </script>
     </div>
 @endsection
