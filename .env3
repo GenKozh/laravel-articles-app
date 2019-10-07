@@ -2,16 +2,16 @@ APP_NAME=Laravel
 APP_ENV=local
 APP_KEY=base64:jyfkSwzXYikRmhHTp2jHvLqI+S8XmkT4JCb1HTA7Pk0=
 APP_DEBUG=true
-APP_URL=http://localhost
+APP_URL=http://genko.kl.com.ua
 
 LOG_CHANNEL=stack
 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=forge
-DB_USERNAME=root
-DB_PASSWORD=
+DB_DATABASE=genkozh
+DB_USERNAME=gdata
+DB_PASSWORD=Rootroot77
 
 BROADCAST_DRIVER=log
 CACHE_DRIVER=file
